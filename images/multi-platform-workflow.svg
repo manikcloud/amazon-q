@@ -1,0 +1,52 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF9900;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#232F3E;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#grad2)" />
+  
+  <!-- VS Code Section -->
+  <rect x="50" y="80" width="200" height="120" fill="white" stroke="#232F3E" stroke-width="2" />
+  <text x="150" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#232F3E">VS Code</text>
+  <text x="150" y="125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">Amazon Q Extension</text>
+  <text x="150" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">Real-time Suggestions</text>
+  <text x="150" y="155" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">Code Chat</text>
+  <text x="150" y="180" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FF9900">Windows/Linux</text>
+  
+  <!-- CLI Section -->
+  <rect x="300" y="80" width="200" height="120" fill="white" stroke="#232F3E" stroke-width="2" />
+  <text x="400" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#232F3E">Q CLI</text>
+  <text x="400" y="125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">Terminal Integration</text>
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">Batch Processing</text>
+  <text x="400" y="155" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">Any Editor</text>
+  <text x="400" y="180" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FF9900">WSL2/Native</text>
+  
+  <!-- Other IDEs Section -->
+  <rect x="550" y="80" width="200" height="120" fill="white" stroke="#232F3E" stroke-width="2" />
+  <text x="650" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#232F3E">Other IDEs</text>
+  <text x="650" y="125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">IntelliJ/PyCharm</text>
+  <text x="650" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">Visual Studio</text>
+  <text x="650" y="155" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">AWS Toolkit</text>
+  <text x="650" y="180" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FF9900">Cross-Platform</text>
+  
+  <!-- Amazon Q Service -->
+  <rect x="300" y="250" width="200" height="80" fill="#FF9900" stroke="#232F3E" stroke-width="2" />
+  <text x="400" y="275" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Amazon Q Service</text>
+  <text x="400" y="295" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">AI Engine</text>
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Builder ID Auth</text>
+  
+  <!-- Arrows -->
+  <path d="M 150 200 L 350 250" stroke="white" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M 400 200 L 400 250" stroke="white" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M 650 200 L 450 250" stroke="white" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white" />
+    </marker>
+  </defs>
+  
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Multi-Platform Amazon Q Development</text>
+</svg>

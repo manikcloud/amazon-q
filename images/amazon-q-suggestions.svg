@@ -1,0 +1,14 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#232F3E" />
+  <rect x="50" y="50" width="700" height="300" fill="#1e1e1e" stroke="#FF9900" stroke-width="2" />
+  <text x="400" y="100" font-family="monospace" font-size="14" text-anchor="middle" fill="#FF9900">VS Code - Amazon Q Extension</text>
+  <text x="70" y="140" font-family="monospace" font-size="12" fill="#569cd6">def</text>
+  <text x="110" y="140" font-family="monospace" font-size="12" fill="#dcdcaa">calculate_fibonacci</text>
+  <text x="270" y="140" font-family="monospace" font-size="12" fill="#cccccc">(n):</text>
+  <rect x="70" y="160" width="400" height="80" fill="#264f78" stroke="#FF9900" stroke-width="1" />
+  <text x="80" y="180" font-family="monospace" font-size="11" fill="#cccccc">💡 Amazon Q Suggestion:</text>
+  <text x="80" y="200" font-family="monospace" font-size="10" fill="#cccccc">return n if n &lt;= 1 else</text>
+  <text x="80" y="215" font-family="monospace" font-size="10" fill="#cccccc">calculate_fibonacci(n-1) + calculate_fibonacci(n-2)</text>
+  <text x="80" y="235" font-family="monospace" font-size="9" fill="#FF9900">Press Tab to accept</text>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#FF9900">AI-Powered Code Suggestions in Real-Time</text>
+</svg>

@@ -1,6 +1,6 @@
 # Getting Amazon Q Working on Your Machine - The Real Developer's Guide
 
-![Amazon Q Developer Setup](./images/amazon-q-hero.png)
+![Amazon Q Developer Setup](./images/amazon-q-hero.svg)
 *From zero to AI-powered coding in 15 minutes - no complex AWS setup required*
 
 Alright, let's be honest here. I've been coding for years, and when I first heard about Amazon Q, I thought "great, another AI tool that probably takes forever to set up." Boy, was I wrong about the setup part, but also wrong about how useful it actually is.
@@ -107,7 +107,7 @@ Let me be specific about what the free version actually does:
 - "Write a function to parse CSV files"
 - "Generate unit tests for this class"
 
-![Amazon Q in Action](./images/amazon-q-suggestions.png)
+![Amazon Q in Action](./images/amazon-q-suggestions.svg)
 *Amazon Q providing real-time code suggestions and explanations in VS Code*
 
 ## Part 2: Level Up with Command Line Tools
@@ -280,7 +280,7 @@ q chat --file myapp.py "Review this code for security vulnerabilities and perfor
 
 The CLI approach works with any editor since you can pipe code to it or use it in separate terminal sessions.
 
-![Development Workflow](./images/multi-platform-workflow.png)
+![Development Workflow](./images/multi-platform-workflow.svg)
 *Amazon Q working across different development environments and tools*
 
 ## Troubleshooting Common Issues
