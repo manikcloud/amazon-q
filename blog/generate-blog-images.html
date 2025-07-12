@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Q Blog Images - Parts 1 & 2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #232F3E;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .image-section {
+            margin: 30px 0;
+            padding: 25px;
+            border: 2px solid #FF9900;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .image-title {
+            color: #232F3E;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .prompt-box {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            border-left: 4px solid #FF9900;
+            font-size: 0.9em;
+        }
+        .generate-btn {
+            background: #FF9900;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        .generate-btn:hover {
+            background: #e88900;
+            transform: translateY(-2px);
+        }
+        .instructions {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .markdown-example {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Amazon Q Blog Images Generator</h1>
+        
+        <div class="instructions">
+            <h3>📝 Instructions:</h3>
+            <p>Generate these 3 professional images for your Amazon Q blog using AI image generators like DALL-E, Midjourney, or Stable Diffusion.</p>
+            <p><strong>Colors to use:</strong> AWS Orange (#FF9900) and AWS Dark Blue (#232F3E)</p>
+        </div>
+
+        <!-- Image 1: Hero Image -->
+        <div class="image-section">
+            <div class="image-title">🚀 Image 1: Hero Image - Amazon Q Setup</div>
+            <div class="prompt-box">
+                <strong>AI Image Prompt:</strong><br>
+                Modern developer workspace with laptop showing VS Code editor, Amazon Q extension visible, AI code suggestions appearing in real-time, clean minimalist desk setup, warm professional lighting, AWS orange and dark blue color scheme, realistic photography style, high quality 4K, professional developer environment
+            </div>
+            <div class="markdown-example">
+                <strong>Markdown for blog:</strong><br>
+                ![Amazon Q Developer Setup](./images/amazon-q-hero.png)<br>
+                *From zero to AI-powered coding in 15 minutes - no complex AWS setup required*
+            </div>
+            <button class="generate-btn" onclick="copyPrompt(1)">📋 Copy Prompt</button>
+        </div>
+
+        <!-- Image 2: Amazon Q in Action -->
+        <div class="image-section">
+            <div class="image-title">💻 Image 2: Amazon Q Code Suggestions</div>
+            <div class="prompt-box">
+                <strong>AI Image Prompt:</strong><br>
+                Close-up screenshot of VS Code editor showing Amazon Q providing intelligent code completions, Python code visible, AI suggestions popup with multiple options, syntax highlighting, modern IDE interface, AWS branding elements, clean professional software interface design, high contrast, sharp details
+            </div>
+            <div class="markdown-example">
+                <strong>Markdown for blog:</strong><br>
+                ![Amazon Q in Action](./images/amazon-q-suggestions.png)<br>
+                *Amazon Q providing real-time code suggestions and explanations in VS Code*
+            </div>
+            <button class="generate-btn" onclick="copyPrompt(2)">📋 Copy Prompt</button>
+        </div>
+
+        <!-- Image 3: Multi-Platform Workflow -->
+        <div class="image-section">
+            <div class="image-title">🔧 Image 3: Development Workflow</div>
+            <div class="prompt-box">
+                <strong>AI Image Prompt:</strong><br>
+                Split screen showing multiple development environments: VS Code on left, terminal with Q CLI on right, Windows and WSL logos, code flowing between different tools, modern tech illustration style, AWS orange and blue gradient background, clean vector art style, professional workflow diagram, interconnected development tools
+            </div>
+            <div class="markdown-example">
+                <strong>Markdown for blog:</strong><br>
+                ![Development Workflow](./images/multi-platform-workflow.png)<br>
+                *Amazon Q working across different development environments and tools*
+            </div>
+            <button class="generate-btn" onclick="copyPrompt(3)">📋 Copy Prompt</button>
+        </div>
+
+        <div class="instructions">
+            <h3>💡 Tips for Best Results:</h3>
+            <ul>
+                <li><strong>Consistent branding:</strong> Always use AWS Orange (#FF9900) and Dark Blue (#232F3E)</li>
+                <li><strong>High quality:</strong> Request 4K resolution for crisp blog images</li>
+                <li><strong>Professional style:</strong> These are for AWS Ambassador portal submission</li>
+                <li><strong>Save as PNG:</strong> Better quality and transparency support</li>
+                <li><strong>Alternative tools:</strong> Try DALL-E 3, Midjourney v6, or Adobe Firefly</li>
+            </ul>
+        </div>
+
+        <div class="image-section">
+            <div class="image-title">📁 Adding Images to Your Blog</div>
+            <div class="markdown-example">
+                <strong>Create an images folder and update your README.md:</strong><br><br>
+                # In your blog directory<br>
+                mkdir images<br><br>
+                # Save your generated images as:<br>
+                - images/amazon-q-hero.png<br>
+                - images/amazon-q-suggestions.png<br>
+                - images/multi-platform-workflow.png<br><br>
+                # Then replace the placeholder URLs in README.md with:<br>
+                ![Amazon Q Developer Setup](./images/amazon-q-hero.png)<br>
+                ![Amazon Q in Action](./images/amazon-q-suggestions.png)<br>
+                ![Development Workflow](./images/multi-platform-workflow.png)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const prompts = {
+            1: "Modern developer workspace with laptop showing VS Code editor, Amazon Q extension visible, AI code suggestions appearing in real-time, clean minimalist desk setup, warm professional lighting, AWS orange and dark blue color scheme, realistic photography style, high quality 4K, professional developer environment",
+            2: "Close-up screenshot of VS Code editor showing Amazon Q providing intelligent code completions, Python code visible, AI suggestions popup with multiple options, syntax highlighting, modern IDE interface, AWS branding elements, clean professional software interface design, high contrast, sharp details",
+            3: "Split screen showing multiple development environments: VS Code on left, terminal with Q CLI on right, Windows and WSL logos, code flowing between different tools, modern tech illustration style, AWS orange and blue gradient background, clean vector art style, professional workflow diagram, interconnected development tools"
+        };
+
+        function copyPrompt(imageNum) {
+            navigator.clipboard.writeText(prompts[imageNum]).then(function() {
+                alert('Prompt copied to clipboard! Paste it into your AI image generator.');
+            });
+        }
+    </script>
+</body>
+</html>
