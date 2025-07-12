@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Q Blog Images Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #232F3E, #FF9900);
+        }
+        
+        .image-container {
+            width: 800px;
+            height: 400px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Image 1: Amazon Q Architecture Overview */
+        .image1 {
+            background: linear-gradient(135deg, #232F3E 0%, #FF9900 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            color: white;
+        }
+        
+        .image1 .left-content {
+            flex: 1;
+        }
+        
+        .image1 h1 {
+            font-size: 36px;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+        }
+        
+        .image1 .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .image1 .architecture-flow {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .image1 .component {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .image1 .arrow {
+            color: #FF9900;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .image1 .right-content {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .aws-logo {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #232F3E;
+        }
+        
+        /* Image 2: Problem/Solution Visual */
+        .image2 {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            color: white;
+        }
+        
+        .image2 .problem-section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .image2 .solution-section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .image2 h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .image2 .icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+        }
+        
+        .image2 .divider {
+            width: 2px;
+            height: 200px;
+            background: rgba(255,255,255,0.3);
+            margin: 0 20px;
+        }
+        
+        /* Image 3: Success/Results */
+        .image3 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+        
+        .image3 h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .image3 .success-metrics {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .image3 .metric {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .image3 .metric-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        .image3 .metric-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .download-btn {
+            background: #FF9900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 14px;
+        }
+        
+        .download-btn:hover {
+            background: #e68900;
+        }
+        
+        .instructions {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .instructions h3 {
+            color: #232F3E;
+            margin-top: 0;
+        }
+        
+        .instructions ol {
+            color: #333;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h3>📸 How to Use These Images for Your Medium Blog</h3>
+        <ol>
+            <li><strong>Right-click</strong> on each image below</li>
+            <li>Select <strong>"Save image as..."</strong> or <strong>"Copy image"</strong></li>
+            <li>Save with descriptive names like "amazon-q-architecture.png"</li>
+            <li>Upload to Medium when writing your blog post</li>
+            <li><strong>Suggested placement:</strong>
+                <ul>
+                    <li>Image 1: After the introduction section</li>
+                    <li>Image 2: Before the "Step-by-Step Implementation" section</li>
+                    <li>Image 3: At the end, before conclusion</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Image 1: Amazon Q Architecture Overview -->
+    <div class="image-container">
+        <div class="image1">
+            <div class="left-content">
+                <h1>Amazon Q Developer Pro</h1>
+                <div class="subtitle">Complete Setup Architecture</div>
+                <div class="architecture-flow">
+                    <div class="component">Identity<br>Center</div>
+                    <div class="arrow">→</div>
+                    <div class="component">Builder<br>ID</div>
+                    <div class="arrow">→</div>
+                    <div class="component">Q Business<br>App</div>
+                    <div class="arrow">→</div>
+                    <div class="component">Web<br>Experience</div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="aws-logo">AWS Q</div>
+                <div style="font-size: 16px; opacity: 0.9;">AI-Powered Development</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image 2: Problem vs Solution -->
+    <div class="image-container">
+        <div class="image2">
+            <div class="problem-section">
+                <div class="icon">❌</div>
+                <h2>The Problem</h2>
+                <div>• Activation token with no clear path</div>
+                <div>• 404 errors on console links</div>
+                <div>• No direct 'q activate' command</div>
+                <div>• Confusing documentation</div>
+            </div>
+            <div class="divider"></div>
+            <div class="solution-section">
+                <div class="icon">✅</div>
+                <h2>The Solution</h2>
+                <div>• Step-by-step CLI approach</div>
+                <div>• Complete architecture setup</div>
+                <div>• Identity Center integration</div>
+                <div>• Working web experience</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image 3: Success Results -->
+    <div class="image-container">
+        <div class="image3">
+            <h1>🎉 Mission Accomplished!</h1>
+            <div style="font-size: 20px; opacity: 0.9; margin-bottom: 20px;">
+                Amazon Q Developer Pro Successfully Activated
+            </div>
+            <div class="success-metrics">
+                <div class="metric">
+                    <div class="metric-number">✓</div>
+                    <div class="metric-label">Application<br>Created</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">✓</div>
+                    <div class="metric-label">Web Interface<br>Active</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">✓</div>
+                    <div class="metric-label">CLI<br>Authenticated</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">✓</div>
+                    <div class="metric-label">Ready for<br>Development</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>🎨 Image Placement Suggestions for Medium</h3>
+        <p><strong>Image 1 (Architecture):</strong> Place after your introduction, before diving into the technical details. This gives readers a visual overview of what they're about to learn.</p>
+        
+        <p><strong>Image 2 (Problem/Solution):</strong> Perfect for the middle of your article, right before you start explaining the step-by-step solution. It creates a nice transition from problem identification to solution implementation.</p>
+        
+        <p><strong>Image 3 (Success):</strong> Use this at the end of your technical implementation, before your conclusion. It reinforces the successful outcome and creates a sense of achievement.</p>
+        
+        <p><strong>💡 Pro Tip:</strong> In Medium, you can also add captions to these images to provide additional context or key takeaways!</p>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.querySelectorAll('.image-container').forEach((container, index) => {
+            container.addEventListener('click', function() {
+                // Create a temporary canvas to convert the div to image
+                html2canvas(this).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = `amazon-q-blog-image-${index + 1}.png`;
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amdocs Troubleshooting Agent Ultra</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container { 
+            background: white; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px; 
+            max-width: 800px; 
+            width: 90%;
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 30px; 
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+        .header h1 { 
+            color: #333; 
+            font-size: 2.5em; 
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle { 
+            color: #666; 
+            font-size: 1.2em; 
+            margin-bottom: 5px;
+        }
+        .header .version { 
+            color: #888; 
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .performance-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin: 10px 0;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .chat-container { 
+            margin: 20px 0; 
+        }
+        .input-group { 
+            display: flex; 
+            gap: 10px; 
+            margin-bottom: 20px; 
+        }
+        #messageInput { 
+            flex: 1; 
+            padding: 15px; 
+            border: 2px solid #ddd; 
+            border-radius: 10px; 
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        #messageInput:focus { 
+            outline: none; 
+            border-color: #667eea; 
+        }
+        #sendButton { 
+            padding: 15px 30px; 
+            background: linear-gradient(45deg, #667eea, #764ba2); 
+            color: white; 
+            border: none; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        #sendButton:hover { 
+            transform: translateY(-2px);
+        }
+        #sendButton:disabled { 
+            opacity: 0.6; 
+            cursor: not-allowed; 
+        }
+        .response-container { 
+            background: #f8f9fa; 
+            border-radius: 10px; 
+            padding: 20px; 
+            margin-top: 20px; 
+            min-height: 100px;
+            border-left: 4px solid #667eea;
+        }
+        .loading { 
+            text-align: center; 
+            color: #666; 
+            font-style: italic; 
+        }
+        .response { 
+            white-space: pre-wrap; 
+            line-height: 1.6; 
+            color: #333;
+        }
+        .examples { 
+            margin: 20px 0; 
+            padding: 20px; 
+            background: #f0f8ff; 
+            border-radius: 10px; 
+            border-left: 4px solid #667eea;
+        }
+        .examples h3 { 
+            color: #333; 
+            margin-bottom: 15px; 
+        }
+        .example-btn { 
+            display: inline-block; 
+            margin: 5px; 
+            padding: 8px 15px; 
+            background: white; 
+            border: 2px solid #667eea; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .example-btn:hover { 
+            background: #667eea; 
+            color: white; 
+            transform: translateY(-1px);
+        }
+        .footer { 
+            text-align: center; 
+            margin-top: 30px; 
+            padding-top: 20px; 
+            border-top: 2px solid #eee; 
+            color: #666; 
+            font-size: 0.9em;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: blink 1s infinite;
+        }
+        .status-healthy { background-color: #28a745; }
+        .status-loading { background-color: #ffc107; }
+        .status-error { background-color: #dc3545; }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        .performance-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .connection-info {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        .connection-info strong {
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏢 Amdocs Troubleshooting Agent</h1>
+            <div class="subtitle">Ultra Performance Edition</div>
+            <div class="performance-badge">⚡ ULTRA OPTIMIZED</div>
+            <div class="version">v2.0.0 - AWS Cloud Infrastructure Assistant</div>
+            <div style="margin-top: 10px;">
+                <span class="status-indicator status-healthy" id="statusIndicator"></span>
+                <span id="statusText">System Ready</span>
+            </div>
+        </div>
+
+        <div class="connection-info">
+            <strong>🔧 Connection Setup Required:</strong><br>
+            To use this interface, please run the following command in your terminal:<br>
+            <code>kubectl port-forward -n amdocs-ultra-simple service/amdocs-ultra-simple-backend-service 8080:8000</code><br>
+            Then the backend will be accessible at <strong>http://localhost:8080</strong>
+        </div>
+
+        <div class="performance-stats">
+            <div class="stat-item">
+                <div class="stat-value" id="responseTime">--</div>
+                <div class="stat-label">Response Time (s)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="cacheHits">--</div>
+                <div class="stat-label">Cache Hits</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="confidence">--</div>
+                <div class="stat-label">Confidence %</div>
+            </div>
+        </div>
+
+        <div class="examples">
+            <h3>🚀 Ultra-Fast AWS Troubleshooting Examples:</h3>
+            <div class="example-btn" onclick="setMessage('I cannot SSH to my EC2 instance')">🔐 EC2 SSH Issues</div>
+            <div class="example-btn" onclick="setMessage('S3 bucket access denied error')">🪣 S3 Access Problems</div>
+            <div class="example-btn" onclick="setMessage('RDS database connection timeout')">🗄️ RDS Connection Issues</div>
+            <div class="example-btn" onclick="setMessage('Lambda function memory errors')">⚡ Lambda Performance</div>
+            <div class="example-btn" onclick="setMessage('VPC security group configuration')">🛡️ VPC Networking</div>
+            <div class="example-btn" onclick="setMessage('IAM permission denied')">👤 IAM Permissions</div>
+        </div>
+
+        <div class="chat-container">
+            <div class="input-group">
+                <input type="text" id="messageInput" placeholder="Describe your AWS issue for ultra-fast troubleshooting..." />
+                <button id="sendButton" onclick="sendMessage()">🚀 Send</button>
+            </div>
+            <div class="response-container" id="responseContainer">
+                <div class="loading">Ready for ultra-fast AWS troubleshooting! 🚀</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>© 2024 Amdocs. All rights reserved.</strong></p>
+            <p>Created by <strong>Varun Kumar</strong>, AWS Ambassador</p>
+            <p>Under guidance of <strong>Vineet Saxena</strong>, Head of PSU-IT</p>
+            <p style="margin-top: 10px; font-size: 0.8em;">
+                🔥 Ultra Performance Edition | ⚡ Advanced Caching | 🚀 Multi-Threading | 📊 Real-time Analytics
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Use port forwarding endpoint
+        const API_BASE = 'http://localhost:8080';
+        let cacheHits = 0;
+
+        function setMessage(message) {
+            document.getElementById('messageInput').value = message;
+        }
+
+        function updateStatus(status, text) {
+            const indicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            
+            indicator.className = `status-indicator status-${status}`;
+            statusText.textContent = text;
+        }
+
+        function updateStats(responseTime, cached, confidence) {
+            document.getElementById('responseTime').textContent = responseTime.toFixed(1);
+            document.getElementById('confidence').textContent = Math.round(confidence * 100);
+            
+            if (cached) {
+                cacheHits++;
+            }
+            document.getElementById('cacheHits').textContent = cacheHits;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const button = document.getElementById('sendButton');
+            const responseContainer = document.getElementById('responseContainer');
+            
+            if (!input.value.trim()) return;
+            
+            button.disabled = true;
+            button.textContent = '⏳ Processing...';
+            updateStatus('loading', 'Processing...');
+            responseContainer.innerHTML = '<div class="loading">🧠 Ultra-fast AI processing your AWS question...</div>';
+            
+            const startTime = Date.now();
+            
+            try {
+                const response = await fetch(`${API_BASE}/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: input.value,
+                        stream: false
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const data = await response.json();
+                const endTime = Date.now();
+                const clientResponseTime = (endTime - startTime) / 1000;
+                
+                responseContainer.innerHTML = `<div class="response">${data.response}</div>`;
+                
+                updateStats(data.response_time || clientResponseTime, data.cached, data.confidence);
+                updateStatus('healthy', data.cached ? '⚡ Cached Response' : '✅ Fresh Response');
+                
+            } catch (error) {
+                responseContainer.innerHTML = `<div class="response" style="color: #dc3545;">❌ Error: ${error.message}<br><br>🔧 <strong>Solution:</strong> Please ensure port forwarding is active:<br><code>kubectl port-forward -n amdocs-ultra-simple service/amdocs-ultra-simple-backend-service 8080:8000</code></div>`;
+                updateStatus('error', 'Connection Error');
+            }
+            
+            button.disabled = false;
+            button.textContent = '🚀 Send';
+            input.value = '';
+        }
+
+        // Enter key support
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Health check on load
+        async function checkHealth() {
+            try {
+                const response = await fetch(`${API_BASE}/health`);
+                if (response.ok) {
+                    const data = await response.json();
+                    updateStatus('healthy', `${data.service} Ready`);
+                } else {
+                    updateStatus('error', 'Service Unavailable');
+                }
+            } catch (error) {
+                updateStatus('error', 'Connection Failed - Port forwarding needed');
+            }
+        }
+
+        // Check health on page load
+        checkHealth();
+        
+        // Periodic health checks
+        setInterval(checkHealth, 30000);
+    </script>
+</body>
+</html>
