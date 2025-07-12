@@ -286,11 +286,11 @@ The free version gives you professional-grade AI assistance for coding. Most dev
 # Disclaimer
 <details>
 
-Please note that the entire repository is owned and maintained by [Varun Kumar Manik](https://www.linkedin.com/in/vkmanik/). While every effort has been made to ensure the accuracy and reliability of the information and resources provided in this repository, Varun Kumar Manik takes full responsibility for any errors or inaccuracies that may be present.
+Please note that this repository is owned and maintained by [Varun Kumar Manik](https://www.linkedin.com/in/vkmanik/). While every effort has been made to ensure the accuracy and reliability of the information provided, the author takes full responsibility for any errors or inaccuracies that may be present.
 
-No One responsible for the content or materials provided in this repository and disclaims all liability for any issues, misunderstandings, or claims that may arise from the use of the information or materials provided. By using this repository, you acknowledge that Varun Kumar Manik is solely accountable for its content, and you agree to hold  harmless from any claims or liabilities that may arise as a result of your use or reliance on the information provided herein.
+The content in this repository is provided for educational purposes only. Users are expected to apply their own judgment and discretion when utilizing the provided resources. The author cannot guarantee specific results or outcomes from following the materials in this repository.
 
-It is important to understand that this repository contains educational materials for a training course, and users are expected to apply their own judgment and discretion when utilizing the provided resources. Neither Varun Kumar Manik nor Simplilearn can guarantee specific results or outcomes from following the materials in this repository.
+By using this repository, you acknowledge that you do so at your own risk and agree to hold the author harmless from any claims or liabilities that may arise from your use of the information provided.
 
 </details>
 
